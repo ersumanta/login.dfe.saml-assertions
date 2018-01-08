@@ -1,14 +1,20 @@
+const logger = require('./infrastructure/logger');
+const appInsights = require('applicationinsights');
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
-const logger = require('./infrastructure/logger');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const config = require('./infrastructure/config');
+const userAssertions = require('./app/assertions');
+
+if (config.hostingEnvironment.applicationInsights) {
+  appInsights.setup(config.hostingEnvironment.applicationInsights).start();
+}
 
 const app = express();
-const config = require('./infrastructure/config');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined', { stream: fs.createWriteStream('./access.log', { flags: 'a' }) }));
@@ -17,6 +23,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'app'));
 app.use(expressLayouts);
 app.set('layout', 'layouts/layout');
+app.use('/users', userAssertions);
 
 if (config.hostingEnvironment.env === 'dev') {
   app.proxy = true;
