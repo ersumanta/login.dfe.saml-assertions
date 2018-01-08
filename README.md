@@ -1,12 +1,6 @@
-# DfE Express Boilerplate application
+# DfE login.dfe.saml-assertions
 
-This is a starting point for node applications, it included the basics needed to setup a Web application or API. 
+This will provide an endpoint for getting the list of saml assertions for a relying party 
 
-### Default setting for:
 
-- ESLint
-- Testing (Jest)
-- Project structure
-- Express Layout
-- Express Middleware
 
