@@ -1,12 +1,10 @@
-# DfE Express Boilerplate application
+# DfE login.dfe.saml-assertions
 
-This is a starting point for node applications, it included the basics needed to setup a Web application or API. 
+[![Build Status](https://travis-ci.org/DFE-Digital/login.dfe.saml-assertions.svg?branch=master)](https://travis-ci.org/DFE-Digital/login.dfe.saml-assertions)
 
-### Default setting for:
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
-- ESLint
-- Testing (Jest)
-- Project structure
-- Express Layout
-- Express Middleware
+This will provide an endpoint for getting the list of saml assertions for a relying party 
+
+
 
