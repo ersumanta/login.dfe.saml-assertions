@@ -1,11 +1,10 @@
-const issuerAssertionsStorage = require('./issuerAssertionsStorage');
-const staticIssuerAssertions = require('./staticIssuerAssertions');
+/* eslint-disable global-require */
 const config = require('./../config');
 
 let account;
-if (config.assertions.type.toLowerCase() === 'api') {
-  account = issuerAssertionsStorage;
+if (config.assertions.type.toLowerCase() === 'static') {
+  account = require('./staticIssuerAssertions');
 } else {
-  account = staticIssuerAssertions;
+  account = require('./issuerAssertionsStorage');
 }
 module.exports = account;

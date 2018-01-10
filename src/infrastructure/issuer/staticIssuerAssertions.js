@@ -24,9 +24,9 @@ const issuerAssertions = [
 ];
 
 
-const getById =  (id) => {
+const getById = async (id) => {
   const issuerAssertion = issuerAssertions.find(item => item.id.toLowerCase() === id.toLowerCase());
-  return issuerAssertion || null;
+  return Promise.resolve(issuerAssertion || null);
 };
 
 module.exports = {

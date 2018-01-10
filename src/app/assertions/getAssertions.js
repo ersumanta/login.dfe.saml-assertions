@@ -24,7 +24,7 @@ const get = async (req, res) => {
     userAccountAssertionModel.UserId = user.sub;
     userAccountAssertionModel.UserEmail = user.email;
 
-    const issuerAssertion = issuerAssertions.getById(req.params.issuer);
+    const issuerAssertion = await issuerAssertions.getById(req.params.issuer);
 
     if (!issuerAssertion) {
       res.status(404).send();

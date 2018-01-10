@@ -1,5 +1,4 @@
 class userAssertionModel {
-
   get UserAssertions() {
     return this.Assertions;
   }
