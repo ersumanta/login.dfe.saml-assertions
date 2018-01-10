@@ -14,7 +14,7 @@ jest.mock('./../../src/infrastructure/issuer');
 const httpMocks = require('node-mocks-http');
 const accountAssertionModel = require('./../../src/app/assertions/userAssertionModel');
 
-describe('When getting an invitation', () => {
+describe('When getting issuer assertions', () => {
   let req;
   let res;
   let logger;
