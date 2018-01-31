@@ -9,6 +9,9 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./infrastructure/config');
 const userAssertions = require('./app/assertions');
+const { samlAssertionsApi, validateConfigAndQuitOnError } = require('login.dfe.config.schema');
+
+validateConfigAndQuitOnError(samlAssertionsApi, config, logger);
 
 if (config.hostingEnvironment.applicationInsights) {
   appInsights.setup(config.hostingEnvironment.applicationInsights).start();
