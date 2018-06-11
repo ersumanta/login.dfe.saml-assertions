@@ -4,16 +4,21 @@ const issuerAssertions = [
     assertions: [
       {
         Type: 'http://www.edubase.gov.uk/SAUserId',
-        Value: '__k2s-id__'
+        Value: '__k2s-id__',
+        FriendlyName: 'http://www.edubase.gov.uk/SAUserId'
       }, {
         Type: 'urn:oid:2.5.4.45',
-        Value: '__k2s-id__'
+        Value: '__k2s-id__',
+        FriendlyName: 'urn:oid:2.5.4.45'
       }, {
         Type: 'LogonName',
-        Value: '__k2s-id__'
+        Value: '__k2s-id__',
+        FriendlyName: 'LogonName'
+
       }, {
         Type: 'EmailAddress',
-        Value: '__email__'
+        Value: '__email__',
+        FriendlyName: 'EmailAddress'
       }
     ]
   },
@@ -23,15 +28,15 @@ const issuerAssertions = [
       {
         Type: 'urn:oid:2.5.4.45',
         Value: '__saUserId__',
-        FriendlyName: 'userId',
+        FriendlyName: 'userId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/org/organisationId',
         Value: '__organisationId__',
-        FriendlyName: 'organisationId',
+        FriendlyName: 'organisationId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/user/groups',
         Value: '__groups__',
-        FriendlyName: 'groups',
+        FriendlyName: 'groups'
       }
     ]
   },
@@ -41,15 +46,15 @@ const issuerAssertions = [
       {
         Type: 'urn:oid:2.5.4.45',
         Value: '__saUserId__',
-        FriendlyName: 'userId',
+        FriendlyName: 'userId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/org/organisationId',
         Value: '__organisationId__',
-        FriendlyName: 'organisationId',
+        FriendlyName: 'organisationId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/user/groups',
         Value: '__groups__',
-        FriendlyName: 'groups',
+        FriendlyName: 'groups'
       }
     ]
   },
@@ -59,15 +64,15 @@ const issuerAssertions = [
       {
         Type: 'urn:oid:2.5.4.45',
         Value: '__saUserId__',
-        FriendlyName: 'userId',
+        FriendlyName: 'userId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/org/organisationId',
         Value: '__organisationId__',
-        FriendlyName: 'organisationId',
+        FriendlyName: 'organisationId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/user/groups',
         Value: '__groups__',
-        FriendlyName: 'groups',
+        FriendlyName: 'groups'
       }
     ]
   },
@@ -77,15 +82,15 @@ const issuerAssertions = [
       {
         Type: 'urn:oid:2.5.4.45',
         Value: '__saUserId__',
-        FriendlyName: 'userId',
+        FriendlyName: 'userId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/org/organisationId',
         Value: '__organisationId__',
-        FriendlyName: 'organisationId',
+        FriendlyName: 'organisationId'
       }, {
         Type: 'https://sa.education.gov.uk/idp/user/groups',
         Value: '__groups__',
-        FriendlyName: 'groups',
+        FriendlyName: 'groups'
       }
     ]
   }
