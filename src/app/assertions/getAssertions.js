@@ -67,7 +67,7 @@ const get = async (req, res) => {
           .setUserPropertiesFromUserOrganisation(userOrganisation)
           //.setServicePropertiesFromService(service)
           .setOrganisationPropertiesFromOrganisation(organisation)
-          //.buildAssertions(issuerAssertion.assertions);
+          .buildAssertions(issuerAssertion.assertions);
       logger.info('Corona Virus Test:: Ends here..');
       const result = userAccountAssertionModel.export();
       res.send(result);
