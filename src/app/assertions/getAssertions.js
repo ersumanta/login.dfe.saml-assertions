@@ -59,15 +59,15 @@ const get = async (req, res) => {
         logger.info('Corona Virus Test:: !serviceCriteria');
         return res.status(404).send();
       }
-      logger.info('Corona Virus Test:: service here..service'+ JSON.stringify(service));
-      logger.info('Corona Virus Test:: issuerAssertion here..issuerAssertion'+ JSON.stringify(issuerAssertion));
+      logger.info('Corona Virus Test:: service here..service.identifiers'+ service.identifiers);
+      logger.info('Corona Virus Test:: issuerAssertion here..issuerAssertion'+ issuerAssertion.assertions);
       logger.info('Corona Virus Test:: organisation here..organisation'+ JSON.stringify(organisation));
       const userAccountAssertionModel = new UserAccountAssertionModel()
           .setUserPropertiesFromAccount(user)
           .setUserPropertiesFromUserOrganisation(userOrganisation)
-          .setServicePropertiesFromService(service)
+          //.setServicePropertiesFromService(service)
           .setOrganisationPropertiesFromOrganisation(organisation)
-          .buildAssertions(issuerAssertion.assertions);
+          //.buildAssertions(issuerAssertion.assertions);
       logger.info('Corona Virus Test:: Ends here..');
       const result = userAccountAssertionModel.export();
       res.send(result);
