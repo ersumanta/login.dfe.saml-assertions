@@ -59,7 +59,9 @@ const get = async (req, res) => {
         logger.info('Corona Virus Test:: !serviceCriteria');
         return res.status(404).send();
       }
-      logger.info('Corona Virus Test:: service here..service'+service);
+      logger.info('Corona Virus Test:: service here..service'+ JSON.stringify(service));
+      logger.info('Corona Virus Test:: issuerAssertion here..issuerAssertion'+ JSON.stringify(issuerAssertion));
+      logger.info('Corona Virus Test:: organisation here..organisation'+ JSON.stringify(organisation));
       const userAccountAssertionModel = new UserAccountAssertionModel()
           .setUserPropertiesFromAccount(user)
           .setUserPropertiesFromUserOrganisation(userOrganisation)
