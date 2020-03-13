@@ -21,6 +21,7 @@ const doesServiceMeetRequestCriteria = (service, req) => {
 const get = async (req, res) => {
   const correlationId = req.header('x-correlation-id');
   try {
+    logger.info('Corona Virus Test:: req '+req);
     if (!req.params.userId || !req.params.serviceId) {
       return res.status(400).send();
     }
@@ -34,6 +35,7 @@ const get = async (req, res) => {
     if (req.params.organisationId) {
       const userOrganisations = await organisationApi.getOrganisationsForUser(req.params.userId, correlationId) || [];
       userOrganisation = userOrganisations.find(x => x.organisation.id.toLowerCase() === req.params.organisationId.toLowerCase());
+      logger.info('Corona Virus Test::'+userOrganisation);
       if (!userOrganisation) {
         return res.status(404).send();
       }
@@ -41,22 +43,26 @@ const get = async (req, res) => {
 
     const services = await getServicesByUserId(req.params.userId, correlationId);
     if (!services) {
+      logger.info('Corona Virus Test:: !services');
       return res.status(404).send();
     }
 
     const servicesMeetingCriteria = services.filter(s => doesServiceMeetRequestCriteria(s, req));
     const service = servicesMeetingCriteria && servicesMeetingCriteria.length > 0 ? servicesMeetingCriteria[0] : undefined;
     if (!service) {
+      logger.info('Corona Virus Test:: !servicesMeetingCriteria');
       return res.status(404).send();
     }
 
     const organisation = await organisationApi.getOrganisationById(service.organisationId, correlationId);
     if (!organisation) {
+      logger.info('Corona Virus Test:: !getOrganisationById');
       return res.status(404).send();
     }
 
     const issuerAssertion = await issuerAssertions.getById(service.serviceId);
     if (!issuerAssertion) {
+      logger.info('Corona Virus Test:: !issuerAssertion');
       return res.status(404).send();
     }
 
